@@ -4,6 +4,7 @@ authors: "Saha, H. R., Hossain, P., Uddin, M. J., Karim, M. S., Kabir, T., Uddin
 date: 2024-10-23
 journal: "Journal of Environment Pollution and Human Health"
 details: "12(3), 47–52"
-doi: "10.12691/jephh-12-3-1"
+doi: ""
+link: "https://www.sciepub.com/jephh/abstract/16250"
 themes: ["environmental-public-health"]
 ---
