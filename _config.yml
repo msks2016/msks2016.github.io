@@ -21,20 +21,20 @@ baseurl: ""
 # -----------------------------------------------------------------------------
 author:
   name: "Mohammad Shahinur Karim"
-  avatar: "/images/profile.png"        # replace images/profile.png with your photo (square works best)
+  avatar: "/images/headshot.jpg"        # replace images/headshot.jpg with your photo (square works best)
   bio: "MSc candidate in Oncology at Shanghai University, working on non-coding RNA and lung cancer."
   affiliation: "Lab of ncRNA and Cancer, Shanghai University"
   location: "Shanghai, China"
   email: "shahinurkarim16@gmail.com"
   orcid: "0009-0009-9790-6688"         # just the iD, not the full link
   github: "msks2016"                   # just the username
-  google_scholar: ""                   # full link, e.g. "https://scholar.google.com/citations?user=XXXX"
-  researchgate: ""                     # full link
+  google_scholar: "https://scholar.google.com/citations?user=IEWIO0kAAAAJ&hl=en"                   # full link, e.g. "https://scholar.google.com/citations?user=XXXX"
+  researchgate: "https://www.researchgate.net/profile/Mohammad-Shahinur-Karim?ev=hdr_xprf"                     # full link
   linkedin: ""                         # full link
   pubmed: ""                           # full link, e.g. a PubMed search for your name
   x: ""                                # just the username, without @
   website: ""                          # full link to another website
-  cv: ""                               # e.g. "/files/Karim_CV.pdf" after uploading the PDF to the files/ folder
+  cv: "Shahinur_Karim_CV_Bioinformatics_Writing.pdf"                               # e.g. "/files/Karim_CV.pdf" after uploading the PDF to the files/ folder
 
 # Your name exactly as it appears in author lists. It is shown in bold on the Publications page.
 highlight_author: "Karim, M. S."
