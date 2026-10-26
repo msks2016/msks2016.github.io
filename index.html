@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohammad Shahinur Karim</title>
+<meta name="description" content="MSc student in Oncology at Shanghai University. ncRNA in lung cancer, bioinformatics and scientific writing.">
+<style>
+  :root {
+    --bg: #f8f8f8; --card: #ffffff; --text: #1d2433; --muted: #5b6475;
+    --accent: #1f3864; --link: #1a5fb4; --line: #e2e5ea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171c; --card: #1b1f26; --text: #e6e9ef; --muted: #9aa3b2;
+      --accent: #9db8ee; --link: #8ab4f8; --line: #2b313b;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171c; --card: #1b1f26; --text: #e6e9ef; --muted: #9aa3b2;
+    --accent: #9db8ee; --link: #8ab4f8; --line: #2b313b;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    line-height: 1.7; font-size: 17px;
+  }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    position: sticky; top: 0; z-index: 10; background: var(--card);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar {
+    max-width: 900px; margin: 0 auto; padding: 14px 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  }
+  .brand { font-weight: 700; font-size: 1.15rem; color: var(--accent); }
+  nav { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+  nav a { color: var(--text); font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent; }
+  nav a:hover { text-decoration: none; color: var(--accent); }
+  nav a.active { border-bottom-color: var(--accent); color: var(--accent); }
+  #theme {
+    background: none; border: 1px solid var(--line); border-radius: 8px; color: var(--text);
+    cursor: pointer; padding: 4px 10px; font-size: .9rem;
+  }
+
+  main { max-width: 900px; margin: 0 auto; padding: 36px 20px 60px; }
+  section { display: none; }
+  section.active { display: block; }
+  h1 { font-size: 2rem; color: var(--accent); margin: 0 0 20px; line-height: 1.25; }
+  h2 { font-size: 1.25rem; color: var(--accent); margin: 34px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  h3 { font-size: 1.05rem; margin: 22px 0 4px; }
+  p { margin: 0 0 16px; }
+
+  .intro { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+  .photo {
+    width: 190px; height: 190px; border-radius: 50%; object-fit: cover; flex: none;
+    border: 3px solid var(--line); background: var(--card);
+  }
+  .photo-fallback {
+    width: 190px; height: 190px; border-radius: 50%; flex: none; display: flex; align-items: center; justify-content: center;
+    background: var(--accent); color: var(--card); font-size: 3.2rem; font-weight: 700; border: 3px solid var(--line);
+  }
+  .intro .text { flex: 1; min-width: 260px; }
+
+  .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .links a {
+    border: 1px solid var(--line); background: var(--card); border-radius: 999px;
+    padding: 6px 16px; font-weight: 500; font-size: .95rem; color: var(--text);
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--card) !important; border-radius: 8px;
+    padding: 8px 18px; font-weight: 600; margin: 4px 0 12px;
+  }
+  .btn:hover { text-decoration: none; opacity: .9; }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; margin: 0 0 16px; }
+  .card h3 { margin-top: 0; }
+  .tag { display: inline-block; font-size: .78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; margin-left: 6px; vertical-align: middle; }
+  .muted { color: var(--muted); }
+  ul { padding-left: 22px; margin: 6px 0 0; }
+  ol.pubs { padding-left: 24px; }
+  ol.pubs li { margin-bottom: 14px; }
+  .me { font-weight: 700; }
+
+  footer { max-width: 900px; margin: 0 auto; padding: 0 20px 40px; color: var(--muted); font-size: .88rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <a class="brand" href="#about">Mohammad Shahinur Karim</a>
+    <nav id="nav">
+      <a href="#about" data-sec="about">About</a>
+      <a href="#research" data-sec="research">Research</a>
+      <a href="#publications" data-sec="publications">Publications</a>
+      <a href="#cv" data-sec="cv">CV</a>
+      <button id="theme" type="button" aria-label="Toggle light and dark theme">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <h1>About Me</h1>
+  <div class="intro">
+    <!-- Put your photo in the same folder and name it headshot.jpg. If it is missing, initials are shown. -->
+    <img class="photo" src="headshot.jpg" alt="Mohammad Shahinur Karim"
+         onerror="this.outerHTML='<div class=&quot;photo-fallback&quot;>MSK</div>'">
+    <div class="text">
+      <p>I’m an MSc student in Oncology at Shanghai University, working on non-coding RNAs in lung cancer through both wet-lab experiments and bioinformatics analysis. With a background in biochemistry and clinical laboratory work, I have co-authored eight published articles in oncology, infectious disease, ophthalmology, nutrition and environmental health.</p>
+      <p>I’m building my skills in bioinformatics and scientific writing, and this website is where I share my work. If you’re a professor or an employer, you can find my <a href="#research">research</a>, my <a href="#publications">publications</a> and my <a href="#cv">CV</a> here.</p>
+      <p>I’m looking for research, higher-study and career opportunities in bioinformatics and medical and scientific writing. If you have a question or an idea for a collaboration, feel free to <a href="#contact">reach out</a>.</p>
+    </div>
+  </div>
+
+  <h2 id="contact">Contact</h2>
+  <div class="links">
+    <a href="mailto:shahinurkarim16@gmail.com">Email</a>
+    <a href="https://github.com/msks2016" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://orcid.org/0009-0009-9790-6688" target="_blank" rel="noopener">ORCID</a>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section id="research">
+  <h1>Research</h1>
+  <p><span class="muted">Interests:</span> ncRNA and cancer biology · bioinformatics for cancer research · pharmaceutical biotechnology · fragment-based drug design</p>
+
+  <div class="card">
+    <h3>Benchmarking published lncRNA/miRNA prognostic signatures in lung adenocarcinoma <span class="tag">in progress</span></h3>
+    <p class="muted">Independent computational project · Shanghai University · manuscript in preparation</p>
+    <ul>
+      <li>Systematic PubMed search and screening of published signatures, with structured data extraction and a reporting-completeness survey.</li>
+      <li>Scoring of selected signatures in independent cohorts (TCGA-LUAD, CPTAC-3, GEO) in R, using survival analysis and random-signature comparisons.</li>
+      <li>Analysis plan registered on OSF; code is version-controlled on GitHub.</li>
+    </ul>
+    <p style="margin-top:10px"><a href="https://github.com/msks2016/LUAD_signature_benchmark" target="_blank" rel="noopener">Code on GitHub →</a></p>
+  </div>
+
+  <div class="card">
+    <h3>LINC-PINT / miR-135b-5p / KLF4 ceRNA axis in lung adenocarcinoma <span class="tag">MSc thesis</span></h3>
+    <p class="muted">Lab of ncRNA and Cancer · School of Life Sciences, Shanghai University</p>
+    <ul>
+      <li>Bioinformatics analysis completed; wet-lab validation designed (qPCR, CCK-8 after LINC-PINT knockdown).</li>
+      <li>Manuscript writing under way.</li>
+    </ul>
+  </div>
+
+  <h2>Skills</h2>
+  <p><strong>Bioinformatics:</strong> R, TCGA / CPTAC-3 / GEO data handling, survival analysis, ceRNA network analysis, SPSS, GIS mapping, GitHub.</p>
+  <p><strong>Scientific &amp; medical writing:</strong> research manuscripts, study protocols and pre-registration, PRISMA-style literature screening, scientific English editing, research ethics.</p>
+  <p><strong>Laboratory &amp; clinical:</strong> cell culture, transfection, qPCR, western blot, luciferase assay, CCK-8, flow cytometry, ELISA, HPLC, clinical biochemistry.</p>
+</section>
+
+<!-- ============ PUBLICATIONS ============ -->
+<section id="publications">
+  <h1>Publications</h1>
+  <p class="muted">Eight published articles, one as first author.</p>
+  <ol class="pubs">
+    <li><span class="me">Karim, M. S.</span>, Shukla, H., Mishu, N. I., Haque, M., Khondaker, J. A., Anwar, K. S., &amp; Jaman, A. (2025). Impact of screen time reduction and outdoor activities on myopia progression in school-aged children. <em>J. Biosci. Public Health</em>, 1(1), 1–12. <a href="https://doi.org/10.5455/JBPH.2025.01" target="_blank" rel="noopener">DOI</a></li>
+    <li>Arbin, A. N., Akter, T., Sumaiya, R. Z. O., Othai, N. T., <span class="me">Karim, M. S.</span>, Mithu, M. M. U., Jaman, A., Mubarak, M., &amp; Islam, M. S. (2025). Parental knowledge, practices, and challenges in managing human metapneumovirus (hMPV)-associated acute respiratory infections in children in Bangladesh. <em>Microbes and Infectious Diseases</em>, 6(3), 991–1005. <a href="https://doi.org/10.21608/mid.2025.368581.2629" target="_blank" rel="noopener">DOI</a></li>
+    <li>Rani, H., Pervez, Jamal, <span class="me">Karim, M. S.</span>, Tansha, Nasir, Shahinul, M., &amp; Bidhan. (2024). BPA (bisphenol A) exposure as an environmental risk factor: A cross-sectional study on breast cancer among the Bangladeshi female population. <em>Journal of Environment Pollution and Human Health</em>, 12(3), 47–52.</li>
+    <li>Islam, M. S., Roy, C., Ishadi, K. S., Mithu, M. M. U., Abedin, E. S., <span class="me">Karim, M. S.</span>, Alam, M. F., Apou, A. C., Chowdhury, A. M. B. A., &amp; Mubarak, M. (2024). Dietary pattern and nutritional status of school-going adolescents in rural areas of Bangladesh. <em>Current Research in Nutrition and Food Science</em>, 12(3). <a href="https://doi.org/10.12944/CRNFSJ.12.3.11" target="_blank" rel="noopener">DOI</a></li>
+    <li>Rani, H., Tasnim, <span class="me">Karim, M. S.</span>, Aziz, E., Asad-uz-zaman, Nasim, M., Amatur, &amp; Sarkar, B. C. (2024). Study of the measurement of environmental estrogen level from drinking water in Dhaka City: A cross-sectional study. <em>American Journal of Water Resources</em>, 12(4). <a href="https://pubs.sciepub.com/ajwr/12/4/3/" target="_blank" rel="noopener">Link</a></li>
+    <li>Islam, M. S., <span class="me">Karim, M. S.</span>, Nayeem, D., Mondal, N., Sumaya, Chowdhury, A., &amp; Mubarak, M. (2024). Prevalence of antibiotic-resistant bacteria in street foods available in educational institutions. <em>African Journal of Biological Sciences</em>, 6(13), 6122–6138. <a href="https://doi.org/10.48047/AFJBS.6.13.2024.6122-6138" target="_blank" rel="noopener">DOI</a></li>
+    <li>Akter, N., Mithu, M. M. U., <span class="me">Karim, M. S.</span>, Mubarak, M., Saha, H. R., Sarker, B. C., &amp; Islam, M. S. (2022). The effects of preexisting health conditions and vaccination on COVID-19 complications. <em>IJSBAR</em>, 64, 66–80. <a href="https://www.gssrr.org/index.php/JournalOfBasicAndApplied/article/view/14574" target="_blank" rel="noopener">Link</a></li>
+    <li>Hossain, M. R., Mithu, M. M. U., Akter, N., <span class="me">Karim, M. S.</span>, Akter, I., Mubarak, M., Saha, H. R., Sarkar, B. C., &amp; Islam, M. S. (2022). Vaccination and long-term follow-up of post-COVID-19 complications. <em>International Journal of Applied Sciences: Current and Future Research Trends</em>, 15(1), 1–15.</li>
+  </ol>
+  <p class="muted">Also listed on <a href="https://orcid.org/0009-0009-9790-6688" target="_blank" rel="noopener">ORCID</a>.</p>
+</section>
+
+<!-- ============ CV ============ -->
+<section id="cv">
+  <h1>CV</h1>
+  <p>My full CV is available as a PDF.</p>
+  <!-- Upload your CV PDF to the same folder with exactly this file name. -->
+  <a class="btn" href="Shahinur_Karim_CV_Bioinformatics_Writing.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+
+  <h2>Education</h2>
+  <h3>MSc in Biology, Major: Oncology <span class="muted">· Sept 2025 – July 2028 (expected)</span></h3>
+  <p class="muted" style="margin:0">Shanghai University, Shanghai, China · cGPA 4.0/4.0 (coursework completed)</p>
+  <h3>BSc (Hons) in Biochemistry <span class="muted">· Jan 2019 – Dec 2022</span></h3>
+  <p class="muted" style="margin:0">Primeasia University, Dhaka, Bangladesh · cGPA 3.97/4.00; 1st of 108 students</p>
+
+  <h2>Experience</h2>
+  <h3>Research Assistant, Lab of ncRNA and Cancer <span class="muted">· Sept 2026 – Present</span></h3>
+  <p class="muted" style="margin:0">School of Life Sciences, Shanghai University</p>
+  <h3>Junior Biochemist, Bangladesh Eye Hospital and Institute <span class="muted">· Feb 2023 – July 2025</span></h3>
+  <p class="muted" style="margin:0">Dhaka, Bangladesh</p>
+  <h3>Research Assistant, 4-Green Research Society <span class="muted">· Feb 2021 – Dec 2022</span></h3>
+  <p class="muted" style="margin:0">Dhaka, Bangladesh</p>
+</section>
+
+</main>
+
+<footer>© <span id="yr"></span> Mohammad Shahinur Karim</footer>
+
+<script>
+  var secs = ['about', 'research', 'publications', 'cv'];
+  function show() {
+    var h = (location.hash || '#about').slice(1);
+    var target = h === 'contact' ? 'about' : h;
+    if (secs.indexOf(target) === -1) target = 'about';
+    secs.forEach(function (s) {
+      document.getElementById(s).classList.toggle('active', s === target);
+    });
+    document.querySelectorAll('#nav a').forEach(function (a) {
+      a.classList.toggle('active', a.getAttribute('data-sec') === target);
+    });
+    if (h === 'contact') {
+      var el = document.getElementById('contact');
+      if (el) el.scrollIntoView();
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+  window.addEventListener('hashchange', show);
+  show();
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  document.getElementById('theme').addEventListener('click', function () {
+    var root = document.documentElement;
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+  });
+</script>
+</body>
+</html>
