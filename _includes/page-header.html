@@ -1,0 +1,13 @@
+{%- comment -%}
+  Title and introduction at the top of each tab.
+  The introduction is the text written below the front matter of the page file in _pages/.
+{%- endcomment -%}
+{%- assign intro = include.intro | strip -%}
+<header class="page-header">
+  <h1 class="page-title">{{ page.title }}</h1>
+  {%- if intro != "" %}
+  <div class="page-intro prose">
+    {{ include.intro }}
+  </div>
+  {%- endif %}
+</header>

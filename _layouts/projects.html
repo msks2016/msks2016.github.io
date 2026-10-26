@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{%- comment -%} Projects tab: every file in _projects/, ordered by its "order" number. {%- endcomment -%}
+{% include page-header.html intro=content %}
+
+{%- assign projects = site.projects | sort: "order", "last" %}
+<div class="project-list">
+  {%- for project in projects %}
+    {% include project-entry.html project=project %}
+  {%- endfor %}
+</div>

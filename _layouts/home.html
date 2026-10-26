@@ -1,0 +1,53 @@
+---
+layout: default
+---
+{%- comment -%}
+  Front page: your research statement and introduction (from _pages/home.md),
+  the projects marked "featured: true" in _projects/, the latest blog posts and contact.
+{%- endcomment -%}
+<section class="home-intro" aria-labelledby="home-heading">
+  <h1 id="home-heading" class="home-heading">{{ page.heading | default: site.description }}</h1>
+  <div class="prose">
+    {{ content }}
+  </div>
+</section>
+
+{%- assign featured = site.projects | where: "featured", true | sort: "order", "last" %}
+{%- if featured.size > 0 %}
+<section class="home-section" aria-labelledby="home-projects">
+  <div class="section-heading">
+    <h2 id="home-projects">{{ page.projects_heading | default: "Current projects" }}</h2>
+    <a href="{{ '/projects/' | relative_url }}">All projects</a>
+  </div>
+  <div class="project-list">
+    {%- for project in featured %}
+      {% include project-entry.html project=project %}
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}
+
+{%- assign post_count = page.recent_posts | default: 3 %}
+{%- if post_count > 0 and site.posts.size > 0 %}
+<section class="home-section" aria-labelledby="home-posts">
+  <div class="section-heading">
+    <h2 id="home-posts">{{ page.posts_heading | default: "Latest from the blog" }}</h2>
+    <a href="{{ '/blog/' | relative_url }}">All posts</a>
+  </div>
+  <ol class="post-list post-list--compact">
+    {%- for post in site.posts limit: post_count %}
+      {% include post-entry.html post=post compact=true %}
+    {%- endfor %}
+  </ol>
+</section>
+{%- endif %}
+
+{%- if site.author.email and site.author.email != "" %}
+<section class="home-section home-contact" aria-labelledby="home-contact">
+  <div class="section-heading">
+    <h2 id="home-contact">Contact</h2>
+  </div>
+  <p>{{ page.contact_text | default: "The best way to reach me is by email:" }}
+    <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></p>
+</section>
+{%- endif %}

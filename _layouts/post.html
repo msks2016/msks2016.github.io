@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- comment -%}
+  A single blog post. If the post's front matter has "publication: <file name>",
+  the matching paper from _publications/ is shown in a box at the end.
+{%- endcomment -%}
+{%- assign words = content | strip_html | number_of_words %}
+{%- assign minutes = words | plus: 199 | divided_by: 200 | at_least: 1 %}
+<article class="post">
+  <header class="page-header">
+    <h1 class="page-title">{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d %B %Y" }}</time>
+      <span>{{ minutes }} min read</span>
+    </p>
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {%- if page.publication %}
+    {%- assign paper = site.publications | where: "slug", page.publication | first %}
+    {%- if paper %}
+  <aside class="paper-box" aria-labelledby="paper-box-title">
+    <h2 id="paper-box-title" class="paper-box__title">Read the paper</h2>
+    {% include publication-entry.html pub=paper hide_post=true %}
+  </aside>
+    {%- endif %}
+  {%- endif %}
+
+  <nav class="post-nav" aria-label="More posts">
+    {%- if page.previous %}
+    <a class="post-nav__prev" href="{{ page.previous.url | relative_url }}"><span>Older post</span>{{ page.previous.title }}</a>
+    {%- else %}<span></span>{% endif %}
+    {%- if page.next %}
+    <a class="post-nav__next" href="{{ page.next.url | relative_url }}"><span>Newer post</span>{{ page.next.title }}</a>
+    {%- endif %}
+  </nav>
+</article>

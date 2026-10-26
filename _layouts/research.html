@@ -1,0 +1,48 @@
+---
+layout: default
+---
+{%- comment -%}
+  Research tab: every file in _research/, ordered by its "order" number.
+  Under each theme, projects and publications that list the theme's file name
+  in their "themes:" field are added automatically.
+{%- endcomment -%}
+{% include page-header.html intro=content %}
+
+{%- assign themes = site.research | sort: "order", "last" %}
+{%- for theme in themes %}
+<section class="theme" id="{{ theme.slug }}" aria-labelledby="{{ theme.slug }}-title">
+  <h2 id="{{ theme.slug }}-title" class="theme__title">{{ theme.title }}</h2>
+  <div class="prose">
+    {{ theme.content | markdownify }}
+  </div>
+
+  {%- if theme.keywords and theme.keywords.size > 0 %}
+  <ul class="keywords" aria-label="Keywords">
+    {%- for keyword in theme.keywords %}
+    <li>{{ keyword }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  {%- assign theme_projects = site.projects | where: "themes", theme.slug | sort: "order", "last" %}
+  {%- if theme_projects.size > 0 %}
+  <h3 class="related__heading">Related projects</h3>
+  <ul class="related">
+    {%- for p in theme_projects %}
+    <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a>{% if p.status %} <span class="related__note">{{ p.status }}</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  {%- assign theme_pubs = site.publications | where: "themes", theme.slug | sort: "date" | reverse %}
+  {%- if theme_pubs.size > 0 %}
+  <h3 class="related__heading">Related publications</h3>
+  <ul class="related">
+    {%- for pub in theme_pubs %}
+      {%- if pub.doi and pub.doi != "" %}{% capture pub_link %}https://doi.org/{{ pub.doi }}{% endcapture %}{% else %}{% assign pub_link = pub.link %}{% endif %}
+    <li>{% if pub_link and pub_link != "" %}<a href="{{ pub_link }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %} <span class="related__note"><em>{{ pub.journal }}</em>, {{ pub.date | date: "%Y" }}</span></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+</section>
+{%- endfor %}

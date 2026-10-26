@@ -1,0 +1,17 @@
+---
+layout: default
+---
+{%- comment -%} Blog tab: every post in _posts/, newest first, grouped by year. {%- endcomment -%}
+{% include page-header.html intro=content %}
+
+{%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{%- for year in years %}
+<section class="year-group" aria-label="{{ year.name }}">
+  <h2 class="year-group__year">{{ year.name }}</h2>
+  <ol class="post-list">
+    {%- for post in year.items %}
+      {% include post-entry.html post=post %}
+    {%- endfor %}
+  </ol>
+</section>
+{%- endfor %}

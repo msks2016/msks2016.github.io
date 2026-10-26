@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{%- comment -%} A single project page, built from one file in _projects/. {%- endcomment -%}
+<article class="project-page status--{{ page.status | default: 'none' | slugify }}">
+  <header class="page-header">
+    <p class="project__meta">
+      {%- if page.status %}<span class="status">{{ page.status }}</span>{% endif -%}
+      {%- if page.period and page.period != "" %}<span>{{ page.period }}</span>{% endif -%}
+    </p>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {%- if page.role and page.role != "" %}
+    <p class="project-page__role">{{ page.role }}</p>
+    {%- endif %}
+  </header>
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  {%- if page.keywords and page.keywords.size > 0 %}
+  <ul class="keywords" aria-label="Keywords">
+    {%- for keyword in page.keywords %}
+    <li>{{ keyword }}</li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  {%- if page.links and page.links.size > 0 %}
+  <p class="link-row">
+    {%- for link in page.links %}
+    <a class="button" href="{{ link.url | relative_url }}">{{ link.label }}</a>
+    {%- endfor %}
+  </p>
+  {%- endif %}
+
+  <p class="back-link"><a href="{{ '/projects/' | relative_url }}">All projects</a></p>
+</article>

@@ -1,0 +1,11 @@
+{%- comment -%} One blog post in a list (front page and Blog tab). {%- endcomment -%}
+{%- assign post = include.post -%}
+<li class="post-entry">
+  <p class="post-entry__date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time></p>
+  <div class="post-entry__body">
+    <h3 class="post-entry__title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    {%- unless include.compact %}
+    <p class="post-entry__excerpt">{{ post.excerpt | strip_html | strip | truncate: 240 }}</p>
+    {%- endunless %}
+  </div>
+</li>

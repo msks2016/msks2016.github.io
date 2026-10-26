@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{%- comment -%}
+  About tab: your introduction (from _pages/about.md), then every file in _about/,
+  grouped into the sections listed in _pages/about.md and ordered by "order" number.
+  A section with style: "inline" is shown as one short row (used for Languages).
+{%- endcomment -%}
+{% include page-header.html intro=content %}
+
+{%- for section in page.sections %}
+  {%- assign items = site.about | where: "category", section.category | sort: "order", "last" %}
+  {%- if items.size > 0 %}
+<section class="entry-section" aria-labelledby="about-{{ section.category }}">
+  <h2 id="about-{{ section.category }}" class="entry-section__title">{{ section.title }}</h2>
+  {%- if section.style == "inline" %}
+  <ul class="inline-list">
+    {%- for item in items %}
+    <li><span class="inline-list__title">{{ item.title }}</span>{% if item.subtitle and item.subtitle != "" %} <span class="inline-list__note">({{ item.subtitle }})</span>{% endif %}</li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <ol class="entries">
+    {%- for item in items %}
+    {%- assign has_dates = false %}{% if item.dates and item.dates != "" %}{% assign has_dates = true %}{% endif %}
+    <li class="entry{% unless has_dates %} entry--no-date{% endunless %}">
+      {%- if has_dates %}
+      <p class="entry__when">{{ item.dates }}</p>
+      {%- endif %}
+      <div class="entry__body">
+        <h3 class="entry__title">{{ item.title }}</h3>
+        {%- if item.subtitle and item.subtitle != "" %}
+        <p class="entry__org">{{ item.subtitle }}</p>
+        {%- endif %}
+        {%- assign text = item.content | strip %}
+        {%- if text != "" %}
+        <div class="entry__text prose">{{ item.content | markdownify }}</div>
+        {%- endif %}
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- endif %}
+</section>
+  {%- endif %}
+{%- endfor %}

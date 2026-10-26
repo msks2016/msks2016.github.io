@@ -1,0 +1,114 @@
+# =============================================================================
+#  SITE SETTINGS
+#  This is the main file to edit for your name, profile and links.
+#  GitHub rebuilds the site automatically 1–2 minutes after you save.
+#  Tip: keep the quotes around text values, and keep the indentation as it is.
+# =============================================================================
+
+title: "Mohammad Shahinur Karim"   # shown at the top-left of every page and in browser tabs
+tagline: "Non-coding RNA, lung cancer and cancer bioinformatics"   # shown after your name in the browser tab of the front page
+description: "MSc candidate in oncology at Shanghai University, working on long non-coding RNAs in lung adenocarcinoma and cancer bioinformatics."   # used by search engines and link previews
+lang: "en"
+
+# Your site address. For a repository named msks2016.github.io keep these as they are.
+# If you use a different repository name (e.g. "website"), set baseurl: "/website".
+url: "https://msks2016.github.io"
+baseurl: ""
+
+# -----------------------------------------------------------------------------
+#  SIDEBAR PROFILE AND CONTACT LINKS
+#  Leave a value empty ("") to hide that line from the sidebar.
+# -----------------------------------------------------------------------------
+author:
+  name: "Mohammad Shahinur Karim"
+  avatar: "/images/profile.png"        # replace images/profile.png with your photo (square works best)
+  bio: "MSc candidate in Oncology at Shanghai University, working on non-coding RNA and lung cancer."
+  affiliation: "Lab of ncRNA and Cancer, Shanghai University"
+  location: "Shanghai, China"
+  email: "shahinurkarim16@gmail.com"
+  orcid: "0009-0009-9790-6688"         # just the iD, not the full link
+  github: "msks2016"                   # just the username
+  google_scholar: ""                   # full link, e.g. "https://scholar.google.com/citations?user=XXXX"
+  researchgate: ""                     # full link
+  linkedin: ""                         # full link
+  pubmed: ""                           # full link, e.g. a PubMed search for your name
+  x: ""                                # just the username, without @
+  website: ""                          # full link to another website
+  cv: ""                               # e.g. "/files/Karim_CV.pdf" after uploading the PDF to the files/ folder
+
+# Your name exactly as it appears in author lists. It is shown in bold on the Publications page.
+highlight_author: "Karim, M. S."
+
+# Text at the bottom of every page (the year and your name are added automatically).
+footer_text: "Built with Jekyll and hosted on GitHub Pages."
+
+# =============================================================================
+#  You rarely need to change anything below this line.
+# =============================================================================
+
+timezone: "Asia/Shanghai"
+future: true            # show posts even if their date is later than today
+
+# Each folder below becomes a section of the site.
+collections:
+  projects:             # _projects/      → Projects tab and the front page
+    output: true
+    permalink: /projects/:name/
+  research:             # _research/      → Research tab
+    output: false
+  publications:         # _publications/  → Publications tab
+    output: false
+  experience:           # _experience/    → Experience tab
+    output: false
+  about:                # _about/         → About tab
+    output: false
+# Blog posts live in _posts/ (a Jekyll rule: that folder name cannot change).
+
+permalink: /blog/:year/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .jekyll-cache
+  - .sass-cache
+  - node_modules
+  - _templates
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml

@@ -1,0 +1,31 @@
+{%- comment -%}
+  One publication (Publications tab, and the box at the end of a blog post).
+  Your name (site.highlight_author in _config.yml) is shown in bold.
+{%- endcomment -%}
+{%- assign pub = include.pub -%}
+{%- assign authors = pub.authors | xml_escape -%}
+{%- if site.highlight_author and site.highlight_author != "" -%}
+  {%- assign plain_name = site.highlight_author | xml_escape -%}
+  {%- capture bold_name %}<strong>{{ plain_name }}</strong>{% endcapture -%}
+  {%- assign authors = authors | replace: plain_name, bold_name -%}
+{%- endif -%}
+{%- if pub.doi and pub.doi != "" -%}
+  {%- capture pub_href %}https://doi.org/{{ pub.doi }}{% endcapture -%}
+{%- elsif pub.link and pub.link != "" -%}
+  {%- assign pub_href = pub.link -%}
+{%- else -%}
+  {%- assign pub_href = "" -%}
+{%- endif -%}
+{%- assign related_post = site.posts | where: "publication", pub.slug | first -%}
+<div class="pub">
+  <p class="pub__title">{% if pub_href != "" %}<a href="{{ pub_href }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</p>
+  <p class="pub__authors">{{ authors }}</p>
+  <p class="pub__venue"><em>{{ pub.journal }}</em>{% if pub.details and pub.details != "" %}, {{ pub.details }}{% endif %} ({{ pub.date | date: "%Y" }})</p>
+  <p class="pub__links">
+    {%- if pub.doi and pub.doi != "" %}<a href="https://doi.org/{{ pub.doi }}">DOI: {{ pub.doi }}</a>{% endif -%}
+    {%- if pub.link and pub.link != "" %}<a href="{{ pub.link }}">Article page</a>{% endif -%}
+    {%- if pub.pdf and pub.pdf != "" %}<a href="{{ pub.pdf | relative_url }}">PDF</a>{% endif -%}
+    {%- if related_post and include.hide_post != true %}<a href="{{ related_post.url | relative_url }}">Blog post</a>{% endif -%}
+    {%- if pub.note and pub.note != "" %}<span class="pub__note">{{ pub.note }}</span>{% endif -%}
+  </p>
+</div>

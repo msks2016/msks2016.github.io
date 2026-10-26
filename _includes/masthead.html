@@ -1,0 +1,14 @@
+<header class="masthead">
+  <div class="wrap masthead__inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {%- for link in site.data.navigation %}
+          {%- assign prefix_length = link.url | size %}
+          {%- assign page_prefix = page.url | slice: 0, prefix_length %}
+          <li><a href="{{ link.url | relative_url }}"{% if page_prefix == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>

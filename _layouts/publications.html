@@ -1,0 +1,18 @@
+---
+layout: default
+---
+{%- comment -%} Publications tab: every file in _publications/, newest first, grouped by year. {%- endcomment -%}
+{% include page-header.html intro=content %}
+
+{%- assign pubs = site.publications | sort: "date" | reverse %}
+{%- assign years = pubs | group_by_exp: "pub", "pub.date | date: '%Y'" %}
+{%- for year in years %}
+<section class="year-group" aria-label="{{ year.name }}">
+  <h2 class="year-group__year">{{ year.name }}</h2>
+  <ol class="pub-list">
+    {%- for pub in year.items %}
+    <li>{% include publication-entry.html pub=pub %}</li>
+    {%- endfor %}
+  </ol>
+</section>
+{%- endfor %}

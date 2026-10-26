@@ -1,0 +1,15 @@
+{%- comment -%} One project in a list (front page and Projects tab). {%- endcomment -%}
+{%- assign p = include.project -%}
+<article class="project status--{{ p.status | default: 'none' | slugify }}">
+  <p class="project__meta">
+    {%- if p.status %}<span class="status">{{ p.status }}</span>{% endif -%}
+    {%- if p.period and p.period != "" %}<span>{{ p.period }}</span>{% endif -%}
+  </p>
+  <h3 class="project__title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+  {%- if p.description %}
+  <p class="project__summary">{{ p.description }}</p>
+  {%- endif %}
+  {%- if p.role and p.role != "" %}
+  <p class="project__role">{{ p.role }}</p>
+  {%- endif %}
+</article>

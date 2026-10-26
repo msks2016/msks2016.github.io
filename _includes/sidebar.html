@@ -1,0 +1,52 @@
+{%- assign a = site.author -%}
+<aside class="sidebar" aria-label="Profile and contact">
+  <div class="profile{% if site.title == a.name %} profile--name-in-title{% endif %}">
+    {%- if a.avatar %}
+    <img class="profile__photo" src="{{ a.avatar | relative_url }}" alt="{{ a.name }}" width="160" height="160">
+    {%- endif %}
+    <div class="profile__text">
+      <p class="profile__name">{{ a.name }}</p>
+      {%- if a.bio %}
+      <p class="profile__bio">{{ a.bio }}</p>
+      {%- endif %}
+    </div>
+  </div>
+  <ul class="contact">
+    {%- if a.affiliation and a.affiliation != "" %}
+    <li class="contact__item contact__item--text">{% include icon.html name="affiliation" %}<span>{{ a.affiliation }}</span></li>
+    {%- endif %}
+    {%- if a.location and a.location != "" %}
+    <li class="contact__item contact__item--text">{% include icon.html name="location" %}<span>{{ a.location }}</span></li>
+    {%- endif %}
+    {%- if a.email and a.email != "" %}
+    <li class="contact__item contact__item--email"><a href="mailto:{{ a.email }}">{% include icon.html name="email" %}<span class="contact__label">{{ a.email }}</span></a></li>
+    {%- endif %}
+    {%- if a.orcid and a.orcid != "" %}
+    <li class="contact__item"><a href="https://orcid.org/{{ a.orcid }}">{% include icon.html name="orcid" %}<span class="contact__label">ORCID</span></a></li>
+    {%- endif %}
+    {%- if a.google_scholar and a.google_scholar != "" %}
+    <li class="contact__item"><a href="{{ a.google_scholar }}">{% include icon.html name="google_scholar" %}<span class="contact__label">Google Scholar</span></a></li>
+    {%- endif %}
+    {%- if a.pubmed and a.pubmed != "" %}
+    <li class="contact__item"><a href="{{ a.pubmed }}">{% include icon.html name="pubmed" %}<span class="contact__label">PubMed</span></a></li>
+    {%- endif %}
+    {%- if a.researchgate and a.researchgate != "" %}
+    <li class="contact__item"><a href="{{ a.researchgate }}">{% include icon.html name="researchgate" %}<span class="contact__label">ResearchGate</span></a></li>
+    {%- endif %}
+    {%- if a.github and a.github != "" %}
+    <li class="contact__item"><a href="https://github.com/{{ a.github }}">{% include icon.html name="github" %}<span class="contact__label">GitHub</span></a></li>
+    {%- endif %}
+    {%- if a.linkedin and a.linkedin != "" %}
+    <li class="contact__item"><a href="{{ a.linkedin }}">{% include icon.html name="linkedin" %}<span class="contact__label">LinkedIn</span></a></li>
+    {%- endif %}
+    {%- if a.x and a.x != "" %}
+    <li class="contact__item"><a href="https://x.com/{{ a.x }}">{% include icon.html name="x" %}<span class="contact__label">X</span></a></li>
+    {%- endif %}
+    {%- if a.website and a.website != "" %}
+    <li class="contact__item"><a href="{{ a.website }}">{% include icon.html name="website" %}<span class="contact__label">Website</span></a></li>
+    {%- endif %}
+    {%- if a.cv and a.cv != "" %}
+    <li class="contact__item"><a href="{{ a.cv | relative_url }}">{% include icon.html name="cv" %}<span class="contact__label">Download CV</span></a></li>
+    {%- endif %}
+  </ul>
+</aside>
