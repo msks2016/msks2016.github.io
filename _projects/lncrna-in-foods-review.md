@@ -1,7 +1,7 @@
 ---
 title: "Long non-coding RNAs in non-small cell lung cancer: a review"
 status: "In preparation"
-period: ""
+period: "On going"
 role: "Review article"
 description: "description: "A critical review of how lncRNAs shape non-small cell lung cancer, from mechanisms and drug resistance to their use as biomarkers and therapeutic targets."
 order: 3
