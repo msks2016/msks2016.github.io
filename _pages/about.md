@@ -18,6 +18,6 @@ sections:
     style: "inline"     # one short row instead of a list
 ---
 
-I am studying for an MSc in Biology, with a major in oncology, at Shanghai University, supported by a Chinese Government Scholarship. Before coming to Shanghai, I completed a BSc in Biochemistry at Primeasia University in Dhaka, where I graduated first in my class, and worked in the laboratory of the Bangladesh Eye Hospital and Institute, most recently as a junior biochemist.
+I am pursuing a PhD in Biology, majoring in Molecular Oncology, at the ncRNA for Cancer Biology Lab, supported by a Government Scholarship. I completed a BSc and MSc in Biochemistry and Molecular Biology and worked in the laboratory of the Bangladesh Eye Hospital and Institute, most recently as a Research Associate.
 
-Alongside laboratory work, I have training in scientific writing and research ethics, and I have co-authored eight journal articles in oncology, infectious disease, ophthalmology, nutrition and environmental health.
+Alongside my laboratory work, I have trained in scientific writing and research ethics, and I have co-authored eight journal articles in oncology, infectious disease, ophthalmology, nutrition, and environmental health.
