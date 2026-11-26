@@ -6,7 +6,7 @@
 title: "Project title"
 status: "Ongoing"              # Ongoing | In preparation | Proposed | Completed (sets the colour of the side line)
 period: "2027 – present"       # leave "" to hide
-role: "MSc thesis project, Shanghai University"   # leave "" to hide
+role: "MSc thesis project"   # leave "" to hide
 description: "One sentence shown in project lists and in search results."
 order: 4                       # position in lists: 1 = first
 featured: true                 # true = also shown on the front page
