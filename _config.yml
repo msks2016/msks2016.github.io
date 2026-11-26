@@ -7,7 +7,7 @@
 
 title: "Mohammad Shahinur Karim"   # shown at the top-left of every page and in browser tabs
 tagline: "Non-coding RNA, lung cancer and cancer bioinformatics"   # shown after your name in the browser tab of the front page
-description: "MSc candidate in oncology at Shanghai University, working on long non-coding RNAs in lung adenocarcinoma and cancer bioinformatics."   # used by search engines and link previews
+description: "PhD candidate in Oncology, working on long non-coding RNAs in lung adenocarcinoma and cancer bioinformatics."   # used by search engines and link previews
 lang: "en"
 
 # Your site address. For a repository named msks2016.github.io keep these as they are.
@@ -22,9 +22,9 @@ baseurl: ""
 author:
   name: "Mohammad Shahinur Karim"
   avatar: "/images/headshot.jpg"        # replace images/headshot.jpg with your photo (square works best)
-  bio: "MSc candidate in Oncology at Shanghai University, working on non-coding RNA and lung cancer."
-  affiliation: "Lab of ncRNA and Cancer, Shanghai University"
-  location: "Shanghai, China"
+  bio: "PhD candidate in Oncology, working on non-coding RNA and lung cancer."
+  affiliation: "Lab for ncRNA and Cancer"
+  location: ""
   email: "shahinurkarim16@gmail.com"
   orcid: "0009-0009-9790-6688"         # just the iD, not the full link
   github: "msks2016"                   # just the username
@@ -34,7 +34,7 @@ author:
   pubmed: ""                           # full link, e.g. a PubMed search for your name
   x: ""                                # just the username, without @
   website: ""                          # full link to another website
-  cv: "Shahinur_Karim_CV_Bioinformatics_Writing.pdf"                               # e.g. "/files/Karim_CV.pdf" after uploading the PDF to the files/ folder
+  cv: "Shahinur_Karim_CV.pdf"                               # e.g. "/files/Karim_CV.pdf" after uploading the PDF to the files/ folder
 
 # Your name exactly as it appears in author lists. It is shown in bold on the Publications page.
 highlight_author: "Karim, M. S."
