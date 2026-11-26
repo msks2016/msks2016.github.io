@@ -8,6 +8,6 @@ recent_posts: 3                        # how many recent blog posts to show (0 h
 contact_text: "For questions about my work or possible collaborations, the best way to reach me is by email:"
 ---
 
-I am an MSc candidate in oncology at Shanghai University, working in the Lab of ncRNA and Cancer at the School of Life Sciences. My work combines bioinformatic analysis of public cancer datasets in R with laboratory validation in lung adenocarcinoma cells.
+I am pursuing a PhD in Biology, majoring in Molecular Oncology, at the ncRNA for Cancer Biology Lab, supported by a Government Scholarship. I completed a BSc and MSc in Biochemistry and Molecular Biology and worked in the laboratory of the Bangladesh Eye Hospital and Institute, most recently as a Research Associate.
 
-Before moving to Shanghai, I trained in biochemistry in Dhaka, worked in a hospital clinical biochemistry laboratory, and co-authored public-health and environmental-health studies in Bangladesh.
+Alongside my laboratory work, I have trained in scientific writing and research ethics, and I have co-authored eight journal articles in oncology, infectious disease, ophthalmology, nutrition, and environmental health.
